@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@types/gsap": "^3.0.0",
     "astro": "^2.7.2",
     "gsap": "^3.12.2",
     "sass": "^1.63.6"
