@@ -1,0 +1,71 @@
+<div class="stker">
+  <div class="stker-border"></div>
+  <div class="stker-circle"></div>
+</div>
+
+<style lang="scss">
+  .stker {
+    pointer-events: none;
+    &-border {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1px solid #eee;
+    }
+
+    &-circle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 11px;
+      height: 11px;
+      background: #6f6f6f;
+      border-radius: 50%;
+    }
+  }
+</style>
+
+<script>
+  import { gsap, Back } from "gsap";
+
+  class CMouseStalker {
+    stker: any;
+    stkerCircle: any;
+
+    constructor() {
+      this.stker = document.querySelector(".stker-border");
+      this.stkerCircle = document.querySelector(".stker-circle");
+      this.mouseEvent();
+    }
+
+    mouseEvent() {
+      document.addEventListener("mousemove", this.onMove.bind(this));
+      document.addEventListener("mousemove", this.onMoveCircle.bind(this));
+    }
+
+    onMove(e) {
+      gsap.to(this.stker, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.7,
+        ease: Back.easeOut.config(1.5),
+      });
+    }
+
+    onMoveCircle(e) {
+      gsap.to(this.stkerCircle, {
+        x: e.clientX,
+        y: e.clientY,
+        ease: Back.easeOut.config(1.5),
+        duration: 0.3,
+      });
+    }
+  }
+
+  const init = new CMouseStalker();
+</script>
