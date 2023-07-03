@@ -74,7 +74,7 @@
           const progress = (triggerPoint - rect.top) / triggerPoint;
           const easedProgress = this.easeInOutCubic(progress);
           const ratio = easedProgress * 1000;
-          elm.style.backgroundImage = `linear-gradient(90deg, rgb(68, 64, 63)  ${ratio}%, rgba(68, 64, 63, .3) 0%)`;
+          elm.style.backgroundImage = `linear-gradient(90deg, rgb(68, 64, 63)  ${ratio}%, rgba(68, 64, 63, .5) 0%)`;
         }
       });
     }
