@@ -55,40 +55,36 @@
 </style>
 
 <script>
-  class CScrollText {
-    [x: string]: any;
+  // class CScrollText {
+  //   [x: string]: any;
 
-    constructor() {
-      this.scrollText = document.querySelectorAll('[data-scroll="scrollText"]');
-      this.init();
-    }
+  //   constructor() {
+  //     this.scrollElement = document.querySelector(".CScrollText");
+  //     this.scrollAmount = this.scrollElement.scrollTop;
+  //     this.scrollText = document.querySelectorAll('[data-scroll="scrollText"]');
+  //     this.init();
+  //   }
+  //   init() {
+  //     window.addEventListener("scroll", (e) => {
+  //       console.log(e);
+  //     });
+  //   }
+  // }
 
-    updateGradient() {
-      this.scrollText.forEach((elm) => {
-        const rect = elm.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
+  // new CScrollText();
 
-        const triggerPoint = windowHeight / 1;
+  const element = document.querySelector(".CScrollText");
 
-        if (rect.top < triggerPoint && rect.bottom >= 0) {
-          const progress = (triggerPoint - rect.top) / triggerPoint;
-          const easedProgress = this.easeInOutCubic(progress);
-          const ratio = easedProgress * 1000;
-          elm.style.backgroundImage = `linear-gradient(90deg, rgb(68, 64, 63)  ${ratio}%, rgba(68, 64, 63, .5) 0%)`;
-        }
-      });
-    }
-
-    //イージング
-    easeInOutCubic(progress) {
-      return progress < 0.5 ? 4 * progress * progress * progress : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-    }
-
-    init() {
-      window.addEventListener("scroll", this.updateGradient.bind(this));
-      this.updateGradient();
-    }
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const scrollAmount = window.scrollY;
+        console.log(scrollAmount);
+      }
+    });
   }
 
-  new CScrollText();
+  window.addEventListener("scroll", () => handleIntersection);
+  const observer = new IntersectionObserver(handleIntersection);
+  observer.observe(element);
 </script>
