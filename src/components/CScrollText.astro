@@ -54,37 +54,4 @@
   }
 </style>
 
-<script>
-  // class CScrollText {
-  //   [x: string]: any;
-
-  //   constructor() {
-  //     this.scrollElement = document.querySelector(".CScrollText");
-  //     this.scrollAmount = this.scrollElement.scrollTop;
-  //     this.scrollText = document.querySelectorAll('[data-scroll="scrollText"]');
-  //     this.init();
-  //   }
-  //   init() {
-  //     window.addEventListener("scroll", (e) => {
-  //       console.log(e);
-  //     });
-  //   }
-  // }
-
-  // new CScrollText();
-
-  const element = document.querySelector(".CScrollText");
-
-  function handleIntersection(entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const scrollAmount = window.scrollY;
-        console.log(scrollAmount);
-      }
-    });
-  }
-
-  window.addEventListener("scroll", () => handleIntersection);
-  const observer = new IntersectionObserver(handleIntersection);
-  observer.observe(element);
-</script>
+<script></script>
