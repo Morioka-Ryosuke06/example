@@ -1,10 +1,9 @@
 <section class="CScrollText">
   <div class="content">
     <h1 class="heading">
-      <span class="heading-text clip" data-scroll-text>森岡 良介です。</span>
+      <span class="heading-text clip" data-scroll-text>STUDIO DETAILS 4989</span>
     </h1>
     <p class="content">
-      <span class="text clip" data-scroll-text></span>
       <span class="text clip" data-scroll-text>こちらのデモは、</span>
       <span class="text clip" data-scroll-text>スクロール量に合わせて、</span>
       <span class="text clip" data-scroll-text>linear-gradientの値を変更しています。</span>
@@ -72,9 +71,9 @@
 
         if (rectTop < triggerPoint && rectBottom >= 0) {
           const progress = (triggerPoint - rectTop) / triggerPoint;
-          const ratio = progress * 400;
+          const ratio = progress * 300;
 
-          gsap.set(item, { backgroundImage: `linear-gradient(90deg, rgb(68, 64, 63) ${ratio}%, rgba(68, 64, 63, .3) 0%)` });
+          gsap.set(item, { backgroundImage: `linear-gradient(90deg, rgb(68, 64, 63) ${ratio}%, rgba(68, 64, 63, .3) 0%)`, ease: "power3.easeOut" });
         }
       });
     }
