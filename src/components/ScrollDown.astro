@@ -1,0 +1,53 @@
+<section class="scrollDown">
+  <h1 class="text">Scroll Down</h1>
+</section>
+
+<style lang="scss">
+  .scrollDown {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #c3c3c3;
+  }
+
+  .text {
+    font-size: 16px;
+    display: block;
+    width: max-content;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 46px;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+
+  const text = document.querySelector(".text");
+  const backgroundStart = "linear-gradient( rgb(68, 64, 63) 100%, rgba(68, 64, 63, 0) 0%)";
+  const backgroundEnd = "linear-gradient(rgb(68, 64, 63) 100%, rgba(68, 64, 63, 0.3) 0%)";
+
+  const timeline = gsap.timeline({ repeat: -1 });
+  timeline.to(
+    text,
+    {
+      backgroundImage: backgroundStart,
+      duration: 3,
+      ease: "Expo.easeInOut",
+    },
+    "+=1"
+  );
+  timeline.to(
+    text,
+    {
+      backgroundImage: backgroundEnd,
+      duration: 1,
+      ease: "ease",
+      opacity: 0,
+    },
+    "+=3"
+  );
+  timeline.play();
+</script>
