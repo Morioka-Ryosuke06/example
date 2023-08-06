@@ -1,6 +1,6 @@
-<section class="scrollDown">
-  <h1 class="text">Scroll Down</h1>
-</section>
+<div class="scrollDown">
+  <p class="text">Scroll Down</p>
+</div>
 
 <style lang="scss">
   .scrollDown {
@@ -11,13 +11,13 @@
   }
 
   .text {
-    font-size: 16px;
+    font-family: "Poppins", sans-serif;
     display: block;
     width: max-content;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    font-size: 46px;
+    font-size: 80px;
     font-weight: bold;
   }
 </style>
@@ -27,27 +27,26 @@
 
   const text = document.querySelector(".text");
   const backgroundStart = "linear-gradient( rgb(68, 64, 63) 100%, rgba(68, 64, 63, 0) 0%)";
-  const backgroundEnd = "linear-gradient(rgb(68, 64, 63) 100%, rgba(68, 64, 63, 0.3) 0%)";
-
+  const backgroundEnd = "linear-gradient( rgb(68, 64, 63) 100%, rgba(68, 64, 63, 0.3) 0%)";
   const timeline = gsap.timeline({ repeat: -1 });
   timeline.to(
     text,
     {
       backgroundImage: backgroundStart,
-      duration: 3,
-      ease: "Expo.easeInOut",
+      duration: 2,
+      ease: "power4.out",
     },
-    "+=1"
+    "+1"
   );
   timeline.to(
     text,
     {
       backgroundImage: backgroundEnd,
-      duration: 1,
-      ease: "ease",
+      duration: 0.5,
+      ease: "power4.InOut",
       opacity: 0,
     },
-    "+=3"
+    "=+1.5"
   );
   timeline.play();
 </script>
