@@ -1,17 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CMouseStalker from "../components/CMouseStalker.astro";
-import CScrollText from "../components/CScrollText.astro";
-import CBox from "../components/CBox.astro";
-import ScrollDown from "../components/ScrollDown.astro";
+import MouseStalker from "../components/common/MouseStalker.astro";
+import ScrollText from "../components/pages/top/ScrollText.astro";
+import Box from "../components/common/Box.astro";
+import ScrollDown from "../components/pages/top/ScrollDown.astro";
 ---
 
 <Layout title="森岡の気になる演出集">
-  <CMouseStalker />
+  <MouseStalker />
   <main>
     <ScrollDown />
-    <CScrollText />
-    <CBox />
+    <ScrollText />
+    <Box />
   </main>
 </Layout>
 
