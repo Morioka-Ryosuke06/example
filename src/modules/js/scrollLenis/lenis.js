@@ -10,10 +10,6 @@ class LenisWrapper {
   }
 
   initialize() {
-    // this.lenis.on('scroll', (e) => {
-    //   console.log(e);
-    // });
-
     this.requestAnimationFrame();
   }
 
