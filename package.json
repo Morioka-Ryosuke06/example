@@ -12,7 +12,7 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.19",
     "@types/gsap": "^3.0.0",
-    "astro": "^2.7.2",
+    "astro": "^3.0.5",
     "gsap": "^3.12.2",
     "sass": "^1.63.6",
     "scrolltrigger": "^1.0.1"

@@ -31,21 +31,21 @@
 </style>
 
 <script>
-  import { gsap, Back } from "gsap";
+  import { gsap, Back } from 'gsap';
 
   class CMouseStalker {
     stker: any;
     stkerCircle: any;
 
     constructor() {
-      this.stker = document.querySelector(".stker-border");
-      this.stkerCircle = document.querySelector(".stker-circle");
+      this.stker = document.querySelector('.stker-border');
+      this.stkerCircle = document.querySelector('.stker-circle');
       this.mouseEvent();
     }
 
     mouseEvent() {
-      document.addEventListener("mousemove", this.onMove.bind(this));
-      document.addEventListener("mousemove", this.onMoveCircle.bind(this));
+      document.addEventListener('mousemove', this.onMove.bind(this));
+      document.addEventListener('mousemove', this.onMoveCircle.bind(this));
     }
 
     onMove(e) {
